@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love:</title>
+    <link rel="stylesheet" href="mylove.css">
+<STYLE>
+    .main-content{
+    text-align: center;
+    padding-top: 40px;
+
+}
+h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 50px;
+    color: #c2185b;
+    text-align: center;
+}
+
+p {
+    font-family: Georgia, Garamond, serif;
+    font-size: 22px;
+    color: #4a2c2a;
+    line-height: 1.8;
+}
+
+
+
+</STYLE>
+
+
+</head>
+<body>
+    <audio id="bgMusic"></audio>
+
+<div class="main-content">
+
+    <h1>To My Love</h1>
+
+    <nav class="navbar">
+        <a href="mylove.html">About You</a>
+        <a href="memories.html">Memories</a>
+        <a href="songs.html">Songs</a>
+    </nav>
+
+
+    <h2>Hello, My Love! Welcome!</h2>
+
+<!-- Slideshow -->
+<div class="photo-container">
+    <img id="slider" src="pictures/pic1.jpg" class="love-photo" alt="My Love">
+</div>
+
+<div class="envelope-container">
+
+    <input type="checkbox" id="open">
+
+    <label for="open" class="envelope">
+
+        <div class="letter">
+            <h2>Hello, My Love</h2>
+
+            <p>
+                Hi babyyy!! Happy Anniversary to us!
+            I dedicate this website to you, my only love. sana alam mo kung gaano ka kahalaga saakin. ang saya ko dahil ikaw ang andiyan sa tabi ko. I love you so much mahal, and I hope that this website will remind you of how much I love you. I hope you enjoy it, my love.
+                
+            </p>
+
+        </div>
+
+    </label>
+
+</div>
+
+        </label>
+
+    </div>
+ <script>
+const pictures = [
+    "pictures/pic1.jpg",
+    "pictures/pic2.jpg",
+    "pictures/pic3.jpg",
+    "pictures/pic4.jpg"
+];
+
+let current = 0;
+
+window.onload = function () {
+
+    const slider = document.getElementById("slider");
+
+    setInterval(function () {
+
+        current = (current + 1) % pictures.length;
+        slider.src = pictures[current];
+
+    }, 3000);
+
+};
+</script>
+</div>
+
+   
+];
+
+<script>
+    const player = document.getElementById("bgMusic");
+
+    const playlist = [
+        "music/Pangarap Lang Kita - Parokya Ni Edgar feat. Hapee Sy  - Narrative V1.mp3",
+"music/I'll Be (Official Music Video) - Edwin McCain.mp3",
+"music/Mariah Carey - Always Be My Baby (Official Music Video).mp3",
+
+        "music/Your Universe (Acoustic).mp3",
+        "music/Libu-Libong Buwan (Uuwian) - Kyle Raphael (Official Music Video).mp3"
+    ];
+
+    let currentSong = 0;
+
+    player.src = playlist[currentSong];
+
+    // Starts after the first click anywhere
+    document.addEventListener("click", function startMusic() {
+        player.play();
+    }, { once: true });
+
+    // Automatically play the next song
+    player.addEventListener("ended", function () {
+        currentSong++;
+
+        if (currentSong >= playlist.length) {
+            currentSong = 0;
+        }
+
+        player.src = playlist[currentSong];
+        player.play();
+    });
+    </script>
+
+
+</body>

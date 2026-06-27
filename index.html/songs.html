@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love</title>
+     <link rel="stylesheet" href="mylove.css">
+</head>
+
+<style>
+    h1,h2,h3 {
+        color: black;   /* or #ff4f8b */
+    }
+    p {
+        color: black;   /* or #ff4f8b */
+    }
+</style>
+<body>
+        <div>
+<h1>To My Love</h1>
+
+
+<nav class="navbar">
+    <a href="mylove.html"> About You</a>
+    <a href="memories.html">Memories</a>
+    <a href="songs.html">Songs</a>
+   
+</nav>
+
+
+<audio id="bgMusic" loop></audio>
+
+
+
+    </div>
+   <div class="songs-section">
+
+    <!-- LEFT -->
+    <div class="music-box">
+
+        <img src="music/Cover1.jpg" class="album-cover" alt="Your Universe">
+
+        <h3>Your Universe</h3>
+        <p>by Rico Blanco</p>
+
+
+        <button class="music-btn"
+        onclick="playSong('music/Your Universe (Acoustic).mp3', this)">
+        ▶ Play
+</button>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="message-box">
+
+        <h2>💌 Message for Tataaaa</h2>
+
+        <p>
+              Happy Anniversary babyy!!
+              I hope that whenever you listen to this song, naalala mo kung gaano ako ka swerte na ikaw yung girlfriend ko. thank you for being mine baby, i love you so much.
+        </p>
+
+
+    </div>
+    <div class="song-row">
+
+    <div class="music-box">
+
+        <img src="music/cover2.png" class="album-cover">
+
+        <h3>Libu-Libong Buwan</h3>
+        <p>by Kyle Raphael</p>
+    
+
+        <button class="music-btn"
+            onclick="playSong('music/Libu-Libong Buwan (Uuwian) - Kyle Raphael (Official Music Video).mp3', this)">
+            ▶ Play
+        </button>
+
+    </div>
+
+    <div class="message-box">
+
+        <h2>I'm always here for you</h2>
+
+        <p>
+            baby, sana pag naririnig mo 'to, alam mong nasa tabi mo lang ako kahit anong mangyari, kailan man. may mga times man na hindi tayo magkaintindihan, sa'yp pa rin ako uuwi. i love you mahal
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+<script>
+const music = document.getElementById("bgMusic");
+
+function playSong(song, button){
+
+    // If the same song is already playing, pause it
+    if(music.src.includes(song) && !music.paused){
+        music.pause();
+
+        button.innerHTML = "▶ Play";
+        return;
+    }
+
+    // Load the selected song
+    music.src = song;
+
+    // Play it
+    music.play();
+
+    // Reset every button
+    document.querySelectorAll(".music-btn").forEach(function(btn){
+        btn.innerHTML = "▶ Play";
+    });
+
+    // Change only the clicked button
+    button.innerHTML = "⏸ Pause";
+}
+</script>
+    
+</body>
+</html>
